@@ -22,6 +22,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint . --ext .ts",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run --passWithNoTests"
   },
   "devDependencies": {
