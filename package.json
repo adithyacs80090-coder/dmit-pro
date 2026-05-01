@@ -1,0 +1,28 @@
+{
+  "name": "dmit-saas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DMIT Premium Report Generation SaaS",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "db:generate": "cd apps/api && pnpm db:generate",
+    "db:migrate": "cd apps/api && pnpm db:migrate",
+    "db:seed": "cd apps/api && pnpm db:seed",
+    "db:studio": "cd apps/api && pnpm db:studio",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "prettier": "^3.3.0",
+    "prettier-plugin-tailwindcss": "^0.6.0"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=9.0.0"
+  }
+}

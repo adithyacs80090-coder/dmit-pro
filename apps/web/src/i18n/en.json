@@ -1,0 +1,498 @@
+{
+  "app": {
+    "name": "DMIT Pro",
+    "tagline": "Premium Dermatoglyphics Intelligence Assessment"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "reports": "Reports",
+    "clients": "Clients",
+    "billing": "Billing",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "auth": {
+    "login": "Counselor Login",
+    "register": "Get Started",
+    "email": "Email Address",
+    "password": "Password",
+    "centerName": "Center Name",
+    "counselorName": "Your Name",
+    "phone": "Phone (Optional)",
+    "signIn": "Sign In",
+    "createAccount": "Create Account",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "signingIn": "Signing in...",
+    "creatingAccount": "Creating account..."
+  },
+  "dashboard": {
+    "overview": "Overview",
+    "totalReports": "Total Reports",
+    "clients": "Clients",
+    "subscription": "Subscription",
+    "daysLeft": "Days Left",
+    "recentReports": "Recent Reports",
+    "generateNew": "Generate New Report",
+    "viewAll": "View All"
+  },
+  "report": {
+    "new": "Generate Premium Report",
+    "clientInfo": "Client Information",
+    "branding": "Counselor Branding",
+    "fingerprintData": "Fingerprint Data",
+    "atdAngles": "ATD Angles",
+    "finger": "Finger",
+    "pattern": "Pattern",
+    "ridgeCount": "Ridge Count",
+    "language": "Report Language",
+    "generate": "Generate Premium Report",
+    "generating": "Generating Report...",
+    "private": "Private & Confidential",
+    "brainDominance": "Brain Dominance",
+    "personalDetails": "Personal Details",
+    "results": "Analysis Results"
+  },
+  "billing": {
+    "subscription": "Subscription",
+    "annualPlan": "Annual Plan",
+    "price": "₹11,988",
+    "perYear": "/year",
+    "perMonth": "₹999/month billed annually. Save 20% compared to monthly billing.",
+    "features": {
+      "unlimited": "Unlimited report generation",
+      "languages": "6-language support (EN, HI, ML, TA, TE, KN)",
+      "college": "Full college database access",
+      "download": "Download & print reports",
+      "clients": "Client management dashboard",
+      "support": "Priority email support",
+      "whitelabel": "White-label branding",
+      "analytics": "Analytics & insights"
+    },
+    "subscribe": "Subscribe Now",
+    "processing": "Loading...",
+    "secure": "Secure payment via Razorpay",
+    "instant": "Instant",
+    "activation": "Activation",
+    "securePayment": "Secure",
+    "payments": "Payments",
+    "premium": "Premium",
+    "premiumSupport": "Support"
+  },
+  "sections": {
+    "cover": "Cover",
+    "profile": "Profile",
+    "brainLobes": "Brain Lobes",
+    "disc": "DISC Profile",
+    "personality": "Personality",
+    "swot": "SWOT Analysis",
+    "intelligence": "Multiple Intelligence",
+    "tfrc": "TFRC",
+    "brainDominance": "Brain Dominance",
+    "thoughtProcess": "Thought Process",
+    "quotients": "Quotients",
+    "learningStyle": "Learning Style",
+    "atd": "ATD Angle",
+    "leadership": "Leadership",
+    "holland": "Holland Code",
+    "mckenzie": "McKenzie Model",
+    "acquiring": "Acquiring Methods",
+    "extra": "Extra Curricular",
+    "stream": "Stream Selection",
+    "career": "Career Options",
+    "ei": "Emotional Intelligence",
+    "ridgeCount": "Ridge Count",
+    "bigFive": "Big Five",
+    "strengths": "Strengths",
+    "colleges": "College Mapper"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "download": "Download",
+    "print": "Print",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "close": "Close",
+    "open": "Open",
+    "back": "Back"
+  },
+  "reports": {
+    "view": {
+      "loading": "Loading report...",
+      "notFound": "Report not found",
+      "cover": {
+        "eyebrow": "Private & Confidential",
+        "subtitle": "Dermatoglyphics Multiple Intelligence Test Report"
+      },
+      "stat": {
+        "analysisNo": "Analysis No.",
+        "dob": "Date of Birth",
+        "tfrc": "TFRC",
+        "brainDominance": "Brain Dominance"
+      },
+      "brainDominanceValue": {
+        "balanced": "Balanced",
+        "right": "Right Brain",
+        "left": "Left Brain"
+      },
+      "profile": {
+        "eyebrow": "Section 01",
+        "title": "Personal Details",
+        "subtitle": "Your unique dermatoglyphic identity",
+        "label": {
+          "fullName": "Full Name",
+          "dob": "Date of Birth",
+          "mobile": "Mobile",
+          "email": "Email"
+        }
+      },
+      "fingerprints": {
+        "eyebrow": "Section 02",
+        "title": "Fingerprint Data",
+        "subtitle": "Pattern and ridge count analysis",
+        "header": {
+          "finger": "Finger",
+          "patternCode": "Pattern Code",
+          "patternName": "Pattern Name",
+          "ridgeCount": "Ridge Count",
+          "intelligence": "Intelligence"
+        }
+      },
+      "finger": {
+        "l1": "L1 Thumb",
+        "l2": "L2 Index",
+        "l3": "L3 Middle",
+        "l4": "L4 Ring",
+        "l5": "L5 Little",
+        "r1": "R1 Thumb",
+        "r2": "R2 Index",
+        "r3": "R3 Middle",
+        "r4": "R4 Ring",
+        "r5": "R5 Little"
+      },
+      "pattern": {
+        "targetCentric": "Target Centric",
+        "spiral": "Spiral",
+        "elongatedTargetCentric": "Elongated Target Centric",
+        "elongatedSpiral": "Elongated Spiral",
+        "doubleLoop": "Double Loop",
+        "imploding": "Imploding",
+        "composite": "Composite",
+        "targetCentricUlnarPeacocksEye": "Target Centric Ulnar Peacock's Eye",
+        "spiralUlnarPeacocksEye": "Spiral Ulnar Peacock's Eye",
+        "targetCentricRadialPeacocksEye": "Target Centric Radial Peacock's Eye",
+        "spiralRadialPeacocksEye": "Spiral Radial Peacock's Eye",
+        "ulnarLoop": "Ulnar Loop",
+        "radialLoop": "Radial Loop",
+        "ulnarFallingLoop": "Ulnar Falling Loop",
+        "radialFallingLoop": "Radial Falling Loop",
+        "plainArch": "Plain Arch",
+        "tentedArch": "Tented Arch",
+        "tentedArchWithUlnarLoop": "Tented Arch with Ulnar Loop",
+        "tentedArchWithRadialLoop": "Tented Arch with Radial Loop",
+        "accidentalWhorl": "Accidental Whorl"
+      }
+    }
+  },
+  "section": {
+    "brainLobes": {
+      "eyebrow": "Section 03",
+      "title": "Brain Lobes",
+      "subtitle": "Pre-frontal, Frontal, Parietal, Temporal, Occipital",
+      "lobeSuffix": " Lobe",
+      "developmentSuffix": " Development",
+      "leftHemisphere": "Left Hemisphere",
+      "rightHemisphere": "Right Hemisphere",
+      "patternPrefix": "Pattern: ",
+      "rcPrefix": "RC: ",
+      "totalRc": "Total RC",
+      "dominantPrefix": "Dominant: "
+    },
+    "disc": {
+      "eyebrow": "Section 04",
+      "title": "DISC Profile",
+      "subtitle": "Behavioral style assessment",
+      "chart": {
+        "dominance": "D - Dominance",
+        "influence": "I - Influence",
+        "steadiness": "S - Steadiness",
+        "compliance": "C - Compliance"
+      },
+      "name": {
+        "dominance": "Dominance",
+        "influence": "Influence",
+        "steadiness": "Steadiness",
+        "compliance": "Compliance"
+      },
+      "dominantStyle": "Dominant Style",
+      "secondaryPrefix": "Secondary: "
+    },
+    "personality": {
+      "eyebrow": "Section 05",
+      "title": "Personality Profile",
+      "subtitle": "Pattern-based personality mapping",
+      "finger": {
+        "l1": "L1 Thumb",
+        "l2": "L2 Index",
+        "l3": "L3 Middle",
+        "l4": "L4 Ring",
+        "l5": "L5 Little",
+        "r1": "R1 Thumb",
+        "r2": "R2 Index",
+        "r3": "R3 Middle",
+        "r4": "R4 Ring",
+        "r5": "R5 Little"
+      }
+    },
+    "swot": {
+      "eyebrow": "Section 06",
+      "title": "SWOT Analysis",
+      "subtitle": "Strategic self-assessment",
+      "strengths": "Strengths",
+      "weaknesses": "Weaknesses",
+      "opportunities": "Opportunities",
+      "threats": "Threats"
+    },
+    "intelligence": {
+      "eyebrow": "Section 07",
+      "title": "Multiple Intelligence",
+      "subtitle": "10 intelligences based on fingerprint patterns",
+      "top3Label": "Top 3 Intelligences"
+    },
+    "tfrc": {
+      "eyebrow": "Section 08",
+      "title": "Total Finger Ridge Count (TFRC)",
+      "subtitle": "Overall neural connectivity indicator",
+      "level": {
+        "average": "Average",
+        "veryHigh": "Very High",
+        "high": "High",
+        "developing": "Developing"
+      },
+      "description": "Total ridge count across all 10 fingers",
+      "scale": {
+        "max": "300+"
+      }
+    },
+    "brainDominance": {
+      "eyebrow": "Section 09",
+      "title": "Brain Dominance",
+      "subtitle": "Right brain vs Left brain distribution",
+      "label": {
+        "rightBrain": "Right Brain",
+        "leftBrain": "Left Brain"
+      },
+      "side": {
+        "balanced": "Balanced",
+        "right": "Right Brain Dominant",
+        "left": "Left Brain Dominant"
+      },
+      "desc": {
+        "balanced": "You use both hemispheres equally. You can switch between creative and logical thinking with flexibility.",
+        "right": "You are naturally creative, intuitive, and big-picture oriented. You excel at imagination, art, and seeing patterns.",
+        "left": "You are naturally logical, analytical, and detail-oriented. You excel at reasoning, language, and sequential tasks."
+      },
+      "dominanceLabel": "Dominance",
+      "percentLabel": {
+        "rightBrain": "Right Brain",
+        "leftBrain": "Left Brain"
+      }
+    },
+    "thoughtProcess": {
+      "eyebrow": "Section 10",
+      "title": "Thought Process",
+      "subtitle": "Object vs Concept orientation",
+      "leftBrain": "Left Brain",
+      "objectExecutor": "Object (Executor)",
+      "conceptThinker": "Concept (Thinker)",
+      "rightBrain": "Right Brain",
+      "actionOriented": "You are more action-oriented — you prefer doing and executing over extended planning.",
+      "conceptOriented": "You are more concept-oriented — you prefer thinking, planning, and strategizing before acting."
+    },
+    "quotients": {
+      "eyebrow": "Section 11",
+      "title": "Quotients",
+      "subtitle": "IQ, EQ, CQ, and AQ assessment",
+      "label": {
+        "iq": "IQ",
+        "eq": "EQ",
+        "cq": "CQ",
+        "aq": "AQ"
+      },
+      "desc": {
+        "iq": "Intelligence Quotient — reasoning & problem-solving",
+        "eq": "Emotional Quotient — self-awareness & empathy",
+        "cq": "Creativity Quotient — innovation & imagination",
+        "aq": "Adversity Quotient — resilience & grit"
+      }
+    },
+    "learningStyle": {
+      "eyebrow": "Section 12",
+      "title": "Learning Style",
+      "subtitle": "How you best acquire new information",
+      "style": {
+        "kinesthetic": "Kinesthetic",
+        "auditory": "Auditory",
+        "visual": "Visual"
+      },
+      "perFingerStyle": "Per-Finger Style",
+      "primaryPrefix": "Primary: ",
+      "descriptionPrefix": "You learn best through ",
+      "descriptionConnector": " methods — ",
+      "description": {
+        "kinesthetic": "hands-on practice and physical engagement.",
+        "auditory": "listening, discussions, and verbal instruction.",
+        "visual": "visual aids, diagrams, and written material."
+      }
+    },
+    "atd": {
+      "eyebrow": "Section 13",
+      "title": "ATD Angle",
+      "subtitle": "A-T-D angle interpretation",
+      "leftHand": "Left Hand ATD",
+      "average": "Average ATD",
+      "rightHand": "Right Hand ATD",
+      "leftBrainSpeed": "Left Brain Speed",
+      "rightBrainSpeed": "Right Brain Speed"
+    },
+    "leadership": {
+      "eyebrow": "Section 14",
+      "title": "Leadership & Workplace Profile",
+      "subtitle": "Behavioral insights for professional growth",
+      "item": {
+        "workStyle": "Work Style",
+        "decisionMaking": "Decision Making",
+        "conflictStyle": "Conflict Style",
+        "feedbackPreference": "Feedback Preference",
+        "riskTolerance": "Risk Tolerance",
+        "idealManager": "Ideal Manager",
+        "teamRole": "Team Role"
+      },
+      "motivationDrivers": "Motivation Drivers"
+    },
+    "holland": {
+      "eyebrow": "Section 15",
+      "title": "Holland Code (RIASEC)",
+      "subtitle": "Career interest inventory",
+      "yourHollandCode": "Your Holland Code"
+    },
+    "mckenzie": {
+      "eyebrow": "Section 16",
+      "title": "McKenzie Model",
+      "subtitle": "Thinking style classification",
+      "style": {
+        "analytic": "Analytic",
+        "introspective": "Introspective",
+        "interactive": "Interactive"
+      },
+      "dominantStyle": "Dominant Style"
+    },
+    "acquiring": {
+      "eyebrow": "Section 17",
+      "title": "Acquiring Methods",
+      "subtitle": "How you best absorb and retain knowledge",
+      "primaryMethod": "Primary Method",
+      "secondaryMethod": "Secondary Method"
+    },
+    "extraCurricular": {
+      "eyebrow": "Section 18",
+      "title": "Extra Curricular Activities",
+      "subtitle": "Recommended activities based on your profile"
+    },
+    "stream": {
+      "eyebrow": "Section 19",
+      "title": "Stream Selection",
+      "subtitle": "Science, Commerce, or Arts",
+      "label": {
+        "science": "Science",
+        "commerce": "Commerce",
+        "arts": "Arts"
+      },
+      "description": {
+        "science": "You have strong analytical and logical abilities. Science stream suits your natural curiosity for how things work.",
+        "commerce": "You show strong business acumen and numerical reasoning. Commerce stream aligns with your practical mindset.",
+        "arts": "You are creative, expressive, and people-oriented. Arts stream lets you explore your imaginative and social strengths."
+      },
+      "recommendedLabel": "Recommended Stream"
+    },
+    "career": {
+      "eyebrow": "Section 20",
+      "title": "Career Options",
+      "subtitle": "Top recommended professions",
+      "matchLabel": "Match: ",
+      "badge": {
+        "bestFit": "Best Fit",
+        "strongFit": "Strong Fit",
+        "goodFit": "Good Fit",
+        "developing": "Developing"
+      },
+      "allMatchesPrefix": "All Career Matches (",
+      "allMatchesSuffix": " careers analyzed)",
+      "moreSuffix": " more"
+    },
+    "ei": {
+      "eyebrow": "Section 21",
+      "title": "Emotional Intelligence",
+      "subtitle": "EQ breakdown across 4 dimensions",
+      "dimension": {
+        "selfAwareness": "Self Awareness",
+        "selfRegulation": "Self Regulation",
+        "empathy": "Empathy",
+        "socialSkills": "Social Skills"
+      }
+    },
+    "ridgeCount": {
+      "eyebrow": "Section 22",
+      "title": "Ridge Count Analysis",
+      "subtitle": "Per-finger neural development mapping",
+      "unit": "ridges"
+    },
+    "bigFive": {
+      "eyebrow": "Section 23",
+      "title": "Big Five (OCEAN)",
+      "subtitle": "Personality trait assessment",
+      "trait": {
+        "openness": "Openness",
+        "conscientiousness": "Conscientiousness",
+        "extraversion": "Extraversion",
+        "agreeableness": "Agreeableness",
+        "neuroticism": "Neuroticism"
+      }
+    },
+    "strengths": {
+      "eyebrow": "Section 24",
+      "title": "Strengths Profile",
+      "subtitle": "CliftonStrengths-style derived strengths",
+      "dominantDomain": "Dominant Domain"
+    },
+    "collegeMapper": {
+      "eyebrow": "Section 25",
+      "title": "College & University Mapper",
+      "subtitle": "Top institutions for your recommended careers",
+      "emptyState": "College data will be updated soon for your career matches.",
+      "ageWarning": "You are {{age}} years old. Focus on building a strong academic foundation now. Explore colleges after Grade 10.",
+      "matchLabel": "Match: ",
+      "tier": {
+        "bestFit": "Best Fit",
+        "strongFit": "Strong Fit",
+        "goodFit": "Good Fit",
+        "developingFit": "Developing Fit"
+      },
+      "topCollegesIndia": "Top Colleges in India",
+      "feesLabel": "Fees: ",
+      "topUniversitiesAbroad": "Top Universities Abroad"
+    }
+  }
+}

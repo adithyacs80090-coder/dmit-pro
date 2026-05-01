@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ink: #19332e;
+    --muted: #3f554f;
+    --paper: #f2f5e8;
+    --page: #fffdf2;
+    --panel: #ffffe8;
+    --line: #cbbf9c;
+    --forest: #00715f;
+    --clay: #ff7c59;
+    --plum: #9b59b6;
+    --lake: #087eb1;
+    --mint: #a2ed7a;
+    --honey: #f5ad28;
+    --butter: #ffd84d;
+    --sky: #6edaf2;
+    --lavender: #c4d2ff;
+    --cream: #fff3bf;
+    --shadow: 0 2px 12px rgba(25,51,46,0.08);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Geist', system-ui, sans-serif;
+    background-color: var(--paper);
+    background-image: linear-gradient(#e5e5d8 1px, transparent 1px), linear-gradient(90deg, #e5e5d8 1px, transparent 1px);
+    background-size: 44px 44px;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+  }
+
+  ::selection {
+    background: var(--mint);
+    color: var(--ink);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--paper);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--line);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted);
+  }
+}
+
+@layer components {
+  .packet-page {
+    @apply mb-7 p-8 rounded-card border border-line/85 bg-page shadow-card;
+    background-image: linear-gradient(90deg, var(--clay) 0 14%, var(--plum) 14% 28%, var(--lake) 28% 42%, #11bfb0 42% 56%, #54b95d 56% 70%, #d5df3e 70% 84%, var(--honey) 84% 100%);
+    background-position: top;
+    background-size: 100% 8px;
+    background-repeat: no-repeat;
+  }
+
+  .eyebrow {
+    @apply text-caption uppercase font-black text-forest mb-2 tracking-wider;
+  }
+
+  .star-rating {
+    @apply text-honey font-black tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Print styles */
+@media print {
+  html, body {
+    background: white !important;
+    background-image: none !important;
+  }
+  
+  .packet-page {
+    break-after: page;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    min-height: 0;
+  }
+  
+  .packet-page:last-child {
+    break-after: auto;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+}
