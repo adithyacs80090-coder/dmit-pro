@@ -1,6 +1,6 @@
 [build]
 builder = "nixpacks"
-buildCommand = "npm install -g pnpm && pnpm install && pnpm --filter @dmit/shared build && pnpm --filter @dmit/api build"
+buildCommand = "pnpm install && pnpm --filter @dmit/shared build && pnpm --filter @dmit/api build"
 
 [deploy]
 startCommand = "node apps/api/dist/index.js"
