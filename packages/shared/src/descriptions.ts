@@ -1,4 +1,4 @@
-const DMITDescriptions = (() => {
+export const DMITDescriptions = (() => {
   const brainDominance = {
     left: {
       title: 'Left Brain Dominant',

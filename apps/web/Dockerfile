@@ -8,14 +8,13 @@ WORKDIR /app
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json ./
 COPY packages/shared/package.json packages/shared/tsconfig.json ./packages/shared/
-COPY apps/web/package.json apps/web/tsconfig.json apps/web/vite.config.ts apps/web/tailwind.config.js apps/web/postcss.config.js ./apps/web/
+COPY apps/web/package.json apps/web/tsconfig.json apps/web/vite.config.ts apps/web/tailwind.config.js ./apps/web/
 COPY apps/web/index.html ./apps/web/
 
 RUN pnpm install --frozen-lockfile
 
 COPY packages/shared/src ./packages/shared/src
 COPY apps/web/src ./apps/web/src
-COPY apps/web/public ./apps/web/public
 
 RUN pnpm --filter @dmit/shared build
 RUN pnpm --filter @dmit/web build

@@ -12,6 +12,8 @@ const navItems = [
 
 export function Sidebar() {
   const user = useAuthStore((s) => s.user)
+  const logout = useAuthStore((s) => s.logout)
+
   return (
     <aside className="fixed left-0 top-0 h-screen w-[240px] bg-page/96 border-r border-line/50 z-50 flex flex-col">
       <div className="p-5 border-b border-line/50">
@@ -61,7 +63,11 @@ export function Sidebar() {
       </nav>
       
       <div className="p-4 border-t border-line/50">
-        <button className="flex items-center gap-3 px-4 py-3 w-full rounded-lg text-small font-bold text-muted hover:bg-panel hover:text-ink transition-colors">
+        <button
+          type="button"
+          onClick={logout}
+          className="flex items-center gap-3 px-4 py-3 w-full rounded-lg text-small font-bold text-muted hover:bg-panel hover:text-ink transition-colors"
+        >
           <LogOut className="w-5 h-5" />
           Logout
         </button>

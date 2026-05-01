@@ -35,6 +35,7 @@ ENV NODE_ENV=production
 COPY --from=builder /app/packages/shared/dist ./packages/shared/dist
 COPY --from=builder /app/packages/shared/package.json ./packages/shared/
 COPY --from=builder /app/apps/api/dist ./apps/api/dist
+COPY --from=builder /app/apps/api/src/db/migrations ./apps/api/src/db/migrations
 COPY --from=builder /app/apps/api/package.json ./apps/api/
 COPY --from=builder /app/apps/api/drizzle.config.ts ./apps/api/
 COPY --from=builder /app/node_modules ./node_modules

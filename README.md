@@ -6,7 +6,7 @@ Dermatoglyphics Multiple Intelligence Test — Premium Report Generation Platfor
 
 - **Frontend**: React 19 + Vite 6 + Tailwind CSS + Zustand
 - **Backend**: Node.js 22 + Express + TypeScript + Drizzle ORM
-- **Database**: PostgreSQL 16
+- **Database**: MySQL 8
 - **Cache**: Redis 7
 - **Payments**: Razorpay (Annual subscription: ₹11,988/year)
 - **i18n**: English, Hindi, Malayalam, Tamil, Telugu, Kannada
@@ -43,7 +43,7 @@ npm install -g pnpm
 # Install dependencies
 pnpm install
 
-# Start Docker services (PostgreSQL + Redis)
+# Start Docker services (MySQL + Redis)
 docker-compose up -d
 
 # Run database migrations

@@ -110,7 +110,7 @@ authRouter.post('/login', async (req, res, next) => {
   }
 })
 
-authRouter.post('/refresh', async (req, res, next) => {
+authRouter.post('/refresh', async (req, res) => {
   try {
     const { refreshToken } = req.body
     if (!refreshToken) {
@@ -121,7 +121,7 @@ authRouter.post('/refresh', async (req, res, next) => {
     const accessToken = generateAccessToken(payload)
     
     res.json({ accessToken })
-  } catch (error) {
+  } catch {
     res.status(401).json({ error: 'Invalid refresh token' })
   }
 })

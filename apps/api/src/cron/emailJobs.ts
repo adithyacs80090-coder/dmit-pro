@@ -14,7 +14,6 @@ export function startEmailCronJobs() {
 
 async function checkExpiringSubscriptions() {
   const now = new Date()
-  const threeDaysFromNow = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)
   const sevenDaysFromNow = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
 
   try {

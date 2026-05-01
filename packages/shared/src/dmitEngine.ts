@@ -332,7 +332,6 @@ export const PATTERN_CODES: PatternInfo[] = [
 const W_CODES = ['W', 'W10', 'W1', 'W2', 'W3', 'W4', 'W11', 'W5', 'W6', 'W7', 'W8', 'W9']
 const L_CODES = ['L', 'L1']
 const R_CODES = ['R', 'R1']
-const X_CODES = ['X1', 'X2', 'X3', 'X4']
 
 const BASE_WEIGHTS: Record<string, number> = {
   art: 1.33, img: 1.19, gm: 1.31, mu: 1.35, vi: 1.57,
@@ -385,7 +384,6 @@ const DISC_MAP: Record<string, string> = {
 function isWhorl(code: string): boolean { return W_CODES.includes(code) }
 function isLoop(code: string): boolean { return L_CODES.includes(code) }
 function isRadial(code: string): boolean { return R_CODES.includes(code) }
-function isArch(code: string): boolean { return X_CODES.includes(code) }
 
 export function starRating(pct: number): number {
   if (pct >= 0.11) return 5
@@ -1001,10 +999,10 @@ export function calculateDmit(input: FingerprintData): DmitResults {
 
 /* ───────────────────────── Career List Generator ───────────────────────── */
 
-function generateCareerList(rbDist: Record<string, number>, manifestedRaw: Record<string, number>): CareerEntry[] {
+function generateCareerList(rbDist: Record<string, number>, _manifestedRaw: Record<string, number>): CareerEntry[] {
   const artVal = rbDist['art'], imgVal = rbDist['img'], gmVal = rbDist['gm'], muVal = rbDist['mu']
   const viVal = rbDist['vi'], intraVal = rbDist['intra'], logicVal = rbDist['logic']
-  const fmVal = rbDist['fm'], langVal = rbDist['lang'], natVal = rbDist['nat'], litVal = rbDist['lit']
+  const fmVal = rbDist['fm'], langVal = rbDist['lang'], natVal = rbDist['nat']
 
   return [
     // Traditional careers

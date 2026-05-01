@@ -2,17 +2,18 @@ version: '3.8'
 
 services:
   db:
-    image: postgres:16-alpine
+    image: mysql:8.4
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-dmit}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-dmit_secret}
-      POSTGRES_DB: ${POSTGRES_DB:-dmit_pro}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-dmit_root_secret}
+      MYSQL_USER: ${MYSQL_USER:-dmit}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-dmit_secret}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-dmit_pro}
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - mysql_data:/var/lib/mysql
     networks:
       - dmit-network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-dmit}"]
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p$${MYSQL_ROOT_PASSWORD} --silent"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -36,7 +37,7 @@ services:
     environment:
       NODE_ENV: production
       PORT: 4000
-      DATABASE_URL: postgres://${POSTGRES_USER:-dmit}:${POSTGRES_PASSWORD:-dmit_secret}@db:5432/${POSTGRES_DB:-dmit_pro}
+      DATABASE_URL: mysql://${MYSQL_USER:-dmit}:${MYSQL_PASSWORD:-dmit_secret}@db:3306/${MYSQL_DATABASE:-dmit_pro}
       REDIS_URL: redis://redis:6379
       JWT_SECRET: ${JWT_SECRET}
       JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET}
@@ -87,7 +88,7 @@ services:
     restart: unless-stopped
 
 volumes:
-  postgres_data:
+  mysql_data:
 
 networks:
   dmit-network:

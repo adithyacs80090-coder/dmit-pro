@@ -6,6 +6,7 @@ import rateLimit from 'express-rate-limit'
 import morgan from 'morgan'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { existsSync } from 'fs'
 import { env } from './config/env.js'
 import { authRouter } from './routes/auth.js'
 import { reportsRouter } from './routes/reports.js'
@@ -15,11 +16,13 @@ import { adminRouter } from './routes/admin.js'
 import { healthRouter } from './routes/health.js'
 import { errorHandler } from './middleware/errorHandler.js'
 import { startEmailCronJobs } from './cron/emailJobs.js'
-import { migrate } from 'drizzle-orm/mysql2/migrator'
-import { db } from './db/connection.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
+const staticRoot = [
+  path.join(__dirname, '../../'),
+  path.join(__dirname, '../../web/dist'),
+].find((candidate) => existsSync(path.join(candidate, 'index.html')))
 
 const app = express()
 
@@ -53,9 +56,10 @@ app.use('/api/payments', paymentsRouter)
 app.use('/api/colleges', collegesRouter)
 app.use('/api/admin', adminRouter)
 
-// Serve static files (React frontend) from parent directory
-// This serves index.html and assets folder
-app.use(express.static(path.join(__dirname, '../../')))
+// Serve the React frontend when it is bundled with the API deployment.
+if (staticRoot) {
+  app.use(express.static(staticRoot))
+}
 
 // Handle React Router - serve index.html for all non-API routes
 app.use((_req, res, next) => {
@@ -63,18 +67,11 @@ app.use((_req, res, next) => {
   if (_req.path.startsWith('/api')) {
     return next()
   }
-  // Otherwise serve index.html (for React Router to handle)
-  res.sendFile(path.join(__dirname, '../../index.html'))
-})
-
-// Temporary migration endpoint (REMOVE AFTER RUNNING ONCE)
-app.get('/api/run-migrations', async (_req, res) => {
-  try {
-    await migrate(db, { migrationsFolder: './src/db/migrations' })
-    res.json({ success: true, message: 'Migrations completed successfully' })
-  } catch (error: any) {
-    res.status(500).json({ success: false, error: error.message })
+  if (!staticRoot) {
+    return res.status(404).json({ error: 'Frontend build not found' })
   }
+  // Otherwise serve index.html (for React Router to handle)
+  res.sendFile(path.join(staticRoot, 'index.html'))
 })
 
 // API 404 handler (only for API routes)

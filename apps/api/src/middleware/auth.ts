@@ -21,7 +21,7 @@ export async function requireAuth(req: Request, res: Response, next: NextFunctio
     
     req.counselor = counselor
     next()
-  } catch (error) {
+  } catch {
     res.status(401).json({ error: 'Invalid token' })
   }
 }

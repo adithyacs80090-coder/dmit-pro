@@ -29,19 +29,20 @@ jobs:
   test-api:
     runs-on: ubuntu-latest
     services:
-      postgres:
-        image: postgres:16-alpine
+      mysql:
+        image: mysql:8.4
         env:
-          POSTGRES_USER: dmit
-          POSTGRES_PASSWORD: dmit_test
-          POSTGRES_DB: dmit_test
+          MYSQL_ROOT_PASSWORD: dmit_root_test
+          MYSQL_USER: dmit
+          MYSQL_PASSWORD: dmit_test
+          MYSQL_DATABASE: dmit_test
         options: >-
-          --health-cmd pg_isready
+          --health-cmd "mysqladmin ping -h localhost -u root -pdmit_root_test --silent"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
         ports:
-          - 5432:5432
+          - 3306:3306
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
@@ -53,9 +54,9 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
       - run: pnpm --filter @dmit/shared build
-      - run: pnpm --filter @dmit/api test -- --run
+      - run: pnpm --filter @dmit/api run test
         env:
-          DATABASE_URL: postgres://dmit:dmit_test@localhost:5432/dmit_test
+          DATABASE_URL: mysql://dmit:dmit_test@localhost:3306/dmit_test
           JWT_SECRET: test-secret-min-32-chars-long-key
           JWT_REFRESH_SECRET: test-refresh-secret-min-32-chars
 
@@ -71,4 +72,4 @@ jobs:
           node-version: 22
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter @dmit/web test -- --run
+      - run: pnpm --filter @dmit/web run test

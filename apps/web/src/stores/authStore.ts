@@ -25,6 +25,14 @@ interface AuthState {
   logout: () => void
 }
 
+function syncAccessToken(token: string | null) {
+  if (token) {
+    localStorage.setItem('accessToken', token)
+  } else {
+    localStorage.removeItem('accessToken')
+  }
+}
+
 export const useAuthStore = create<AuthState>()(
   persist(
     (set) => ({
@@ -34,10 +42,20 @@ export const useAuthStore = create<AuthState>()(
       isLoading: false,
       
       setUser: (user) => set({ user, isAuthenticated: !!user }),
-      setAccessToken: (token) => set({ accessToken: token }),
+      setAccessToken: (token) => {
+        syncAccessToken(token)
+        set({ accessToken: token })
+      },
       setLoading: (loading) => set({ isLoading: loading }),
-      login: (user, token) => set({ user, accessToken: token, isAuthenticated: true }),
-      logout: () => set({ user: null, accessToken: null, isAuthenticated: false }),
+      login: (user, token) => {
+        syncAccessToken(token)
+        set({ user, accessToken: token, isAuthenticated: true })
+      },
+      logout: () => {
+        syncAccessToken(null)
+        localStorage.removeItem('refreshToken')
+        set({ user: null, accessToken: null, isAuthenticated: false })
+      },
     }),
     {
       name: 'dmit-auth',

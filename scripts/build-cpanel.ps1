@@ -32,6 +32,8 @@ New-Item -ItemType Directory -Path "$DeployDir\api" | Out-Null
 Copy-Item -Recurse "apps\api\dist" "$DeployDir\api\"
 Copy-Item "apps\api\package.json" "$DeployDir\api\"
 Copy-Item "apps\api\drizzle.config.ts" "$DeployDir\api\"
+New-Item -ItemType Directory -Path "$DeployDir\api\src\db" -Force | Out-Null
+Copy-Item -Recurse "apps\api\src\db\migrations" "$DeployDir\api\src\db\"
 
 # Copy shared package dist
 Write-Host "📋 Preparing shared package..." -ForegroundColor Cyan
@@ -49,7 +51,7 @@ $EnvContent = @'
 # Copy this to .env and fill in your values
 NODE_ENV=production
 PORT=3000
-DATABASE_URL=postgres://username:password@localhost:5432/dmit_pro
+DATABASE_URL=mysql://username:password@localhost:3306/dmit_pro
 REDIS_URL=redis://localhost:6379
 JWT_SECRET=generate-a-strong-secret-min-32-chars
 JWT_REFRESH_SECRET=generate-another-strong-secret-min-32-chars
@@ -67,9 +69,9 @@ $EnvContent | Out-File -FilePath "$DeployDir\api\.env.example" -Encoding UTF8
 $Instructions = @'
 # DMIT Pro - cPanel Deployment Guide
 
-## Step 1: Create PostgreSQL Database
+## Step 1: Create MySQL Database
 
-1. In cPanel, go to **PostgreSQL Databases**
+1. In cPanel, go to **MySQL Databases**
 2. Create a new database: `dmit_pro`
 3. Create a new user (or use existing)
 4. Add user to database with ALL PRIVILEGES
@@ -103,7 +105,7 @@ In the Node.js app settings, add these environment variables:
 ```
 NODE_ENV=production
 PORT=3000
-DATABASE_URL=postgres://your_db_user:your_db_password@localhost:5432/dmit_pro
+DATABASE_URL=mysql://your_db_user:your_db_password@localhost:3306/dmit_pro
 JWT_SECRET=your-jwt-secret-min-32-chars
 JWT_REFRESH_SECRET=your-refresh-secret-min-32-chars
 RAZORPAY_KEY_ID=your_razorpay_key
@@ -155,7 +157,7 @@ In cPanel Node.js app manager, click **Restart**
 Run: `cd ~/dmit-api && npm install`
 
 ### "Database connection failed"
-Check DATABASE_URL in environment variables. Make sure PostgreSQL user has permissions.
+Check DATABASE_URL in environment variables. Make sure the MySQL user has permissions.
 
 ### "Port already in use"
 Change PORT in environment variables to another number (e.g., 3001, 8080)
