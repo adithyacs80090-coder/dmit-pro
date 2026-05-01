@@ -8,14 +8,14 @@
     "build": "tsc && tsc-alias",
     "start": "node dist/index.js",
     "lint": "eslint . --ext .ts",
-    "test": "vitest",
+    "test": "vitest run",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:seed": "tsx src/scripts/seed.ts",
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
-    "@dmit/shared": "workspace:*",
+    "@dmit/shared": "file:../../packages/shared",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.0",

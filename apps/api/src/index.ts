@@ -15,6 +15,8 @@ import { adminRouter } from './routes/admin.js'
 import { healthRouter } from './routes/health.js'
 import { errorHandler } from './middleware/errorHandler.js'
 import { startEmailCronJobs } from './cron/emailJobs.js'
+import { migrate } from 'drizzle-orm/mysql2/migrator'
+import { db } from './db/connection.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -63,6 +65,16 @@ app.use((_req, res, next) => {
   }
   // Otherwise serve index.html (for React Router to handle)
   res.sendFile(path.join(__dirname, '../../index.html'))
+})
+
+// Temporary migration endpoint (REMOVE AFTER RUNNING ONCE)
+app.get('/api/run-migrations', async (_req, res) => {
+  try {
+    await migrate(db, { migrationsFolder: './src/db/migrations' })
+    res.json({ success: true, message: 'Migrations completed successfully' })
+  } catch (error: any) {
+    res.status(500).json({ success: false, error: error.message })
+  }
 })
 
 // API 404 handler (only for API routes)
